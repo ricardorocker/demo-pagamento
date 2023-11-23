@@ -1,0 +1,16 @@
+{
+  "demonstrativos": [
+    {
+      "id": 1,
+      "mes": "06/2020",
+      "tipoPagamento": "Depósito Bancário",
+      "dataPagamento": "05/07/2020"
+    },
+    {
+      "id": 2,
+      "mes": "07/2020",
+      "tipoPagamento": "Cheque",
+      "dataPagamento": "10/08/2020"
+    }
+  ]
+}
