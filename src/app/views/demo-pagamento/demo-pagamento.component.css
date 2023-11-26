@@ -2,12 +2,6 @@
   padding: 32px;
 }
 
-.profile-card {
-  min-width: 310px;
-  height: 580px;
-  margin-right: 32px;
-}
-
 .demo-pagamento-card {
   max-width: 1000px;
 }
@@ -53,10 +47,9 @@ i {
     align-items: center;
   }
 
-  .card {
-    width: 80%;
-    margin: 20px 0;
-    padding: 0;
+  .card,
+  .profile-card {
+    width: 70%;
   }
 }
 
@@ -70,7 +63,8 @@ i {
     font-size: 14px;
   }
 
-  .card {
+  .card,
+  .profile-card {
     width: 100%;
   }
 
@@ -79,15 +73,6 @@ i {
   .demo-pagamento-card {
     padding: 20px 0 !important;
     border: none !important;
-  }
-
-  .profile-card .card-body,
-  p {
-    margin: 0 !important;
-  }
-
-  .profile-card {
-    height: 380px;
   }
 
   .card-title,
