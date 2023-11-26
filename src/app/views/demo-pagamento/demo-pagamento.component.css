@@ -2,6 +2,16 @@
   padding: 32px;
 }
 
+.profile-card {
+  min-width: 310px;
+  height: 580px;
+  margin-right: 32px;
+}
+
+.demo-pagamento-card {
+  max-width: 1000px;
+}
+
 th {
   color: #989898 !important;
   border-bottom: solid 1px #e6e6e6;
@@ -11,7 +21,7 @@ th {
 td {
   color: #acacac !important;
   font-weight: bold;
-  line-height: 42px;
+  line-height: 28px;
 }
 
 tr {
@@ -19,18 +29,78 @@ tr {
 }
 
 .proventos,
-.plus-icon {
+i {
   color: #41a58b !important;
 }
 
-.plus-icon {
-  font-size: 28px;
-  font-weight: 900;
+i {
+  font-size: 20px;
   margin-right: 12px;
 }
 
 @media (min-width: 1440px) {
   .container-custom {
     max-width: 1440px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-custom {
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin: 20px 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  table {
+    font-size: 12px;
+  }
+
+  .col,
+  .nav-tabs {
+    font-size: 14px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card,
+  .card-body,
+  .demo-pagamento-card {
+    padding: 20px 0 !important;
+    border: none !important;
+  }
+
+  .profile-card .card-body,
+  p {
+    margin: 0 !important;
+  }
+
+  .profile-card {
+    height: 380px;
+  }
+
+  .card-title,
+  .grid {
+    padding: 0 12px;
+  }
+
+  label {
+    margin: 0 !important;
+  }
+
+  .col-span {
+    display: flex;
+    flex-direction: column;
   }
 }
