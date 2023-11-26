@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DemoPagamentoComponent } from './views/demo-pagamento/demo-pagamento.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { DemoPagamentoTableComponent } from './views/demo-pagamento-table/demo-pagamento-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DemoPagamentoComponent,
-    ProfileCardComponent
+    ProfileCardComponent,
+    DemoPagamentoTableComponent
   ],
   imports: [
     BrowserModule,

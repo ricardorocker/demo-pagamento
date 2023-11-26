@@ -1,0 +1,35 @@
+th {
+  color: #989898 !important;
+  border-bottom: solid 1px #e6e6e6;
+  font-weight: bold;
+}
+
+td {
+  color: #acacac !important;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+tr {
+  border: white;
+}
+
+.proventos,
+i {
+  color: #41a58b !important;
+}
+
+i {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+@media (max-width: 576px) {
+  table {
+    font-size: 12px;
+  }
+
+  .col {
+    font-size: 14px;
+  }
+}
