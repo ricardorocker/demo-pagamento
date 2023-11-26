@@ -1,0 +1,9 @@
+.container-custom {
+  padding: 32px;
+}
+
+@media (min-width: 1440px) {
+  .container-custom {
+    max-width: 1440px;
+  }
+}
