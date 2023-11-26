@@ -1,6 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 /* You can add global styles to this file, and also import other style files */
 
+*{
+  
+  font-size: 18px;
+}
+
 body {
   background-color: #e8e9ed !important;
   z-index: -100;
@@ -20,4 +25,16 @@ body {
 
 .color-success {
   color: #41a58b !important;
+}
+
+.color-light {
+  color: #acacac !important;
+}
+
+.color-span {
+  color: #9f9f9f !important;
+}
+
+.color-label {
+  color: #777777 !important;
 }

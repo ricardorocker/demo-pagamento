@@ -2,6 +2,33 @@
   padding: 32px;
 }
 
+th {
+  color: #989898 !important;
+  border-bottom: solid 1px #e6e6e6;
+  font-weight: bold;
+}
+
+td {
+  color: #acacac !important;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+tr {
+  border: white;
+}
+
+.proventos,
+.plus-icon {
+  color: #41a58b !important;
+}
+
+.plus-icon {
+  font-size: 28px;
+  font-weight: 900;
+  margin-right: 12px;
+}
+
 @media (min-width: 1440px) {
   .container-custom {
     max-width: 1440px;
