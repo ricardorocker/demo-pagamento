@@ -15,8 +15,24 @@ tr {
 }
 
 .proventos,
-i {
+.bi-plus {
   color: #41a58b !important;
+}
+
+.bi-pencil-square {
+  color: rgb(173, 173, 173);
+}
+
+.bi-trash3 {
+  color: rgb(255, 132, 132);
+}
+
+.bi-pencil-square:hover {
+  color: rgb(59, 59, 59);
+}
+
+.bi-trash3:hover {
+  color: rgb(189, 1, 1);
 }
 
 i {
