@@ -5,3 +5,19 @@ body {
   background-color: #e8e9ed !important;
   z-index: -100;
 }
+
+.color-primary {
+  color: #676767 !important;
+}
+
+.color-secondary {
+  color: #8e9fa8 !important;
+}
+
+.color-info {
+  color: #6da9c3 !important;
+}
+
+.color-success {
+  color: #41a58b !important;
+}
