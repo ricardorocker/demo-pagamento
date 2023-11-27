@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { ItemPagamentoModalComponent } from './views/item-pagamento-modal/item-p
     DemoPagamentoComponent,
     ProfileCardComponent,
     DemoPagamentoTableComponent,
-    ItemPagamentoModalComponent
+    ItemPagamentoModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +28,10 @@ import { ItemPagamentoModalComponent } from './views/item-pagamento-modal/item-p
     BrowserAnimationsModule,
     ModalModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [BsModalService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

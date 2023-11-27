@@ -1,16 +1,46 @@
 {
-  "demonstrativos": [
+  "itensFolhaPagamento": [
     {
       "id": 1,
-      "mes": "06/2020",
-      "tipoPagamento": "Depósito Bancário",
-      "dataPagamento": "05/07/2020"
+      "descricao": "Adicional Noturno",
+      "referencia": "12,00",
+      "tipoItem": "proventos",
+      "valor": 161.6
     },
     {
       "id": 2,
-      "mes": "07/2020",
-      "tipoPagamento": "Cheque",
-      "dataPagamento": "10/08/2020"
+      "descricao": "DSR Reflexo H.Extras",
+      "referencia": "4,14",
+      "tipoItem": "proventos",
+      "valor": 278.63
+    },
+    {
+      "id": 3,
+      "descricao": "Gratificação Hora Extra",
+      "referencia": "7,00",
+      "tipoItem": "proventos",
+      "valor": 565.61
+    },
+    {
+      "id": 4,
+      "descricao": "Horas Extras c/ 100%",
+      "referencia": "60,00",
+      "tipoItem": "proventos",
+      "valor": 8080.2
+    },
+    {
+      "id": 5,
+      "descricao": "Horas Normais",
+      "referencia": "188,00",
+      "tipoItem": "proventos",
+      "valor": 12658.98
+    },
+    {
+      "id": 6,
+      "descricao": "INSS",
+      "referencia": "11,00",
+      "tipoItem": "descontos",
+      "valor": 621.03
     }
   ]
 }
