@@ -9,6 +9,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { DemoPagamentoTableComponent } from './views/demo-pagamento-table/demo-pagamento-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
+import { ItemPagamentoModalComponent } from './views/item-pagamento-modal/item-pagamento-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     NavbarComponent,
     DemoPagamentoComponent,
     ProfileCardComponent,
-    DemoPagamentoTableComponent
+    DemoPagamentoTableComponent,
+    ItemPagamentoModalComponent
   ],
   imports: [
     BrowserModule,

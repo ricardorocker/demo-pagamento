@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">
+    {{ modalOperation === "Adicionar" ? "Adicionar Item" : "Editar Item" }}
+  </h4>
+  <button
+    type="button"
+    class="btn btn-close"
+    aria-label="Close"
+    (click)="closeModal.emit()"
+  ></button>
+</div>
+<div class="modal-body">
+  {{
+    modalOperation === "Adicionar"
+      ? "Adicionar item à Folha de Pagamento"
+      : "Editar item na Folha de Pagamento"
+  }}
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="closeModal.emit()">
+    Cancelar
+  </button>
+  <button type="button" class="btn btn-success" (click)="saveChanges()">
+    {{ modalOperation === "Adicionar" ? "Adicionar" : "Salvar Alterações" }}
+  </button>
+</div>

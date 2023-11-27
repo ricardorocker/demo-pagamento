@@ -52,32 +52,6 @@
     </tbody>
   </table>
 </div>
-
 <ng-template #template>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">
-      {{ modalOperation === "Adicionar" ? "Adicionar Item" : "Editar Item" }}
-    </h4>
-    <button
-      type="button"
-      class="btn btn-close"
-      aria-label="Close"
-      (click)="modalRef.hide()"
-    ></button>
-  </div>
-  <div class="modal-body">
-    {{
-      modalOperation === "Adicionar"
-        ? "Adicionar item à Folha de Pagamento"
-        : "Editar item na Folha de Pagamento"
-    }}
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">
-      Cancelar
-    </button>
-    <button type="button" class="btn btn-success">
-      {{ modalOperation === "Adicionar" ? "Adicionar" : "Salvar Alterações" }}
-    </button>
-  </div>
+  <app-item-pagamento-modal [modalOperation]="modalOperation" (closeModal)="modalRef.hide()" />
 </ng-template>
