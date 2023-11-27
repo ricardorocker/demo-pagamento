@@ -19,6 +19,11 @@ tr {
   color: #41a58b !important;
 }
 
+.descontos,
+.bi-dash {
+  color: #F2737C !important;
+}
+
 .bi-pencil-square {
   color: rgb(173, 173, 173);
 }

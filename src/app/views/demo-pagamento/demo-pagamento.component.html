@@ -12,7 +12,12 @@
           <h4 class="d-flex align-items-end text-uppercase color-primary">
             06/2020 - Cálculo Mensal
           </h4>
-          <button type="button" class="btn btn-secondary" aria-label="Configurações">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            aria-label="Configurações"
+            (click)="onToggleEdit()"
+          >
             <i class="bi bi-gear"></i>
           </button>
         </div>
@@ -54,7 +59,7 @@
             </li>
           </ul>
 
-          <app-demo-pagamento-table></app-demo-pagamento-table>
+          <app-demo-pagamento-table [isEdit]="isEdit"></app-demo-pagamento-table>
         </div>
       </div>
     </div>

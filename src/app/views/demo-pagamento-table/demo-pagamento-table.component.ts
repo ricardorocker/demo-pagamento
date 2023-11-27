@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-demo-pagamento-table',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./demo-pagamento-table.component.css'],
 })
 export class DemoPagamentoTableComponent {
-  isEdit: boolean = true;
+  @Input() isEdit: boolean = false;
 }
