@@ -10,7 +10,7 @@
     </button>
   </div>
 
-  <table class="table">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Descrição</th>
@@ -21,87 +21,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-light">
-        <td scope="row"><i class="bi bi-plus"></i>Adicional Noturno</td>
-        <td>12,00</td>
-        <td class="descontos"></td>
-        <td class="proventos">R$ 161,60</td>
+      <tr *ngFor="let item of itensFolhaPagamento">
+        <td scope="row"><i class="bi bi-plus"></i>{{ item.descricao }}</td>
+        <td>{{ item.referencia }}</td>
+        <td class="descontos">
+          {{ item.descontos ? "(" + item.descontos + ")" : "" }}
+        </td>
+        <td class="proventos">{{ item.proventos }}</td>
         <td *ngIf="isEdit">
           <button type="button" class="btn p-0 m-0" aria-label="Editar">
             <i class="icon bi bi-pencil-square"></i>
           </button>
           <button type="button" class="btn p-0 m-0" aria-label="Deletar">
             <i class="icon bi bi-trash3"></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="row"><i class="bi bi-plus"></i>DSR Reflexo H.Extras</td>
-        <td>4,14</td>
-        <td class="descontos"></td>
-        <td class="proventos">R$ 278,63</td>
-        <td *ngIf="isEdit">
-          <button type="button" class="btn p-0 m-0" aria-label="Editar">
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button type="button" class="btn p-0 m-0" aria-label="Deletar">
-            <i class="bi bi-trash3"></i>
-          </button>
-        </td>
-      </tr>
-      <tr class="table-light">
-        <td scope="row"><i class="bi bi-plus"></i>Gratificação Hora Extra</td>
-        <td>7,00</td>
-        <td class="descontos"></td>
-        <td class="proventos">R$ 565,61</td>
-        <td *ngIf="isEdit">
-          <button type="button" class="btn p-0 m-0" aria-label="Editar">
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button type="button" class="btn p-0 m-0" aria-label="Deletar">
-            <i class="bi bi-trash3"></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="row"><i class="bi bi-plus"></i>Horas Extras c/ 100%</td>
-        <td>60,00</td>
-        <td class="descontos"></td>
-        <td class="proventos">R$ 8.080,20</td>
-        <td *ngIf="isEdit">
-          <button type="button" class="btn p-0 m-0" aria-label="Editar">
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button type="button" class="btn p-0 m-0" aria-label="Deletar">
-            <i class="bi bi-trash3"></i>
-          </button>
-        </td>
-      </tr>
-      <tr class="table-light">
-        <td scope="row"><i class="bi bi-plus"></i>Horas Normais</td>
-        <td>188,00</td>
-        <td class="descontos"></td>
-        <td class="proventos">R$ 12.658,98</td>
-        <td *ngIf="isEdit">
-          <button type="button" class="btn p-0 m-0" aria-label="Editar">
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button type="button" class="btn p-0 m-0" aria-label="Deletar">
-            <i class="bi bi-trash3"></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="row"><i class="bi bi-dash"></i>INSS</td>
-        <td>11,00</td>
-        <td class="descontos">(R$ 621,03)</td>
-        <td class="proventos"></td>
-        <td *ngIf="isEdit">
-          <button type="button" class="btn p-0 m-0" aria-label="Editar">
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button type="button" class="btn p-0 m-0" aria-label="Deletar">
-            <i class="bi bi-trash3"></i>
           </button>
         </td>
       </tr>
