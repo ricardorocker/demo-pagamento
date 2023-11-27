@@ -25,16 +25,23 @@
       <tr *ngFor="let item of itensFolhaPagamento">
         <td scope="row">
           <i
-            class="bi"
-            [ngClass]="{ 'bi-dash': item.descontos, 'bi-plus': item.proventos }"
+            [ngClass]="
+              'bi-' + (item.tipoItem === 'descontos' ? 'dash' : 'plus')
+            "
           ></i>
           {{ item.descricao }}
         </td>
         <td>{{ item.referencia }}</td>
         <td class="descontos">
-          {{ item.descontos ? "(" + item.descontos + ")" : "" }}
+          {{
+            item.tipoItem === "descontos"
+              ? "(" + (item.valor | number) + ")"
+              : ""
+          }}
         </td>
-        <td class="proventos">{{ item.proventos }}</td>
+        <td class="proventos">
+          {{ item.tipoItem === "proventos" ? (item.valor | number) : "" }}
+        </td>
         <td *ngIf="isEdit">
           <button
             type="button"
@@ -53,5 +60,8 @@
   </table>
 </div>
 <ng-template #template>
-  <app-item-pagamento-modal [modalOperation]="modalOperation" (closeModal)="modalRef.hide()" />
+  <app-item-pagamento-modal
+    [modalOperation]="modalOperation"
+    (closeModal)="modalRef.hide()"
+  />
 </ng-template>
