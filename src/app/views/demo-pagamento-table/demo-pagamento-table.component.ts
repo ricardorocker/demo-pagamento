@@ -1,5 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
-import { DemoPagamentoModalComponent } from '../demo-pagamento-modal/demo-pagamento-modal.component';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-demo-pagamento-table',
