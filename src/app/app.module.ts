@@ -7,6 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DemoPagamentoComponent } from './views/demo-pagamento/demo-pagamento.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { DemoPagamentoTableComponent } from './views/demo-pagamento-table/demo-pagamento-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,11 @@ import { DemoPagamentoTableComponent } from './views/demo-pagamento-table/demo-p
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ModalModule
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,8 +5,9 @@
       type="button"
       class="btn btn-outline-success d-flex align-items-center py-1"
       aria-label="Criar"
+      (click)="openModal(template)"
     >
-      <i class="bi bi-plus"></i>Criar item
+      <i class="bi bi-plus"></i>Adicionar item
     </button>
   </div>
 
@@ -26,8 +27,8 @@
           <i
             class="bi"
             [ngClass]="{ 'bi-dash': item.descontos, 'bi-plus': item.proventos }"
-          ></i
-          >{{ item.descricao }}
+          ></i>
+          {{ item.descricao }}
         </td>
         <td>{{ item.referencia }}</td>
         <td class="descontos">
@@ -46,3 +47,18 @@
     </tbody>
   </table>
 </div>
+
+<ng-template #template>
+   <div class="modal-header">
+      <h4 class="modal-title pull-left">Adicionar item</h4>
+      <button type="button" class="btn btn-close" aria-label="Close" (click)="modalRef.hide()">
+      </button>
+   </div>
+   <div class="modal-body">
+      Adicionar item à Folha de Pagamento
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
+     <button type="button" class="btn btn-success">Adicionar</button>
+   </div>
+</ng-template>

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-demo-pagamento-table',
@@ -46,4 +47,11 @@ export class DemoPagamentoTableComponent {
       proventos: '',
     },
   ];
+
+  modalRef!: BsModalRef;
+  constructor(private modalService: BsModalService) {}
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
+  }
 }
