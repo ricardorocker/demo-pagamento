@@ -8,7 +8,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class DemoPagamentoTableComponent {
   @Input() isEdit: boolean = false;
-
+  modalOperation: 'Adicionar' | 'Editar' = 'Adicionar';
   itensFolhaPagamento: any[] = [
     {
       descricao: 'Adicional Noturno',
@@ -51,7 +51,8 @@ export class DemoPagamentoTableComponent {
   modalRef!: BsModalRef;
   constructor(private modalService: BsModalService) {}
 
-  openModal(template: TemplateRef<any>) {
+  openModal(template: TemplateRef<any>, operation: 'Adicionar' | 'Editar') {
+    this.modalOperation = operation;
     this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
   }
 }
