@@ -10,6 +10,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class ItemPagamentoModalComponent {
   @Input() modalRef!: BsModalRef;
   @Input() modalOperation: 'Adicionar' | 'Editar' = 'Adicionar';
+  @Input() itemToEdit?: any;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
   itemForm: FormGroup;

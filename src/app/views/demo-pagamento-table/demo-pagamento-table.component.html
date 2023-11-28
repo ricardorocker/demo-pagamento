@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of itensFolhaPagamento">
+      <tr *ngFor="let item of itensFolhaPagamento$ | async">
         <td scope="row">
           <i
             [ngClass]="
@@ -47,7 +47,7 @@
             type="button"
             class="btn p-0 m-0"
             aria-label="Editar"
-            (click)="openModal(template, 'Editar')"
+            (click)="openModal(template, 'Editar', item)"
           >
             <i class="icon bi bi-pencil-square"></i>
           </button>
@@ -61,6 +61,7 @@
 </div>
 <ng-template #template>
   <app-item-pagamento-modal
+    [itemToEdit]="itemToEdit"
     [modalOperation]="modalOperation"
     (closeModal)="modalRef.hide()"
   />
