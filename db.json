@@ -5,7 +5,7 @@
       "descricao": "Adicional Noturno",
       "referencia": "12,00",
       "tipoItem": "proventos",
-      "valor": "161.6"
+      "valor": 161.6
     },
     {
       "id": 2,
@@ -40,14 +40,14 @@
       "descricao": "INSS",
       "referencia": "11,00",
       "tipoItem": "descontos",
-      "valor": "621.03"
+      "valor": 621.03
     },
     {
       "id": 7,
       "descricao": "FGTS",
       "referencia": "15,00",
       "tipoItem": "descontos",
-      "valor": "1012.00"
+      "valor": 1012
     }
   ]
 }

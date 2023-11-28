@@ -21,8 +21,7 @@ export class DemoPagamentoTableComponent implements OnInit {
   ) {}
 
   loadData() {
-    this.itensFolhaPagamento$ =
-      this.demoPagamentoService.getItensFolhaPagamento();
+    this.itensFolhaPagamento$ = this.demoPagamentoService.getAll();
   }
 
   ngOnInit(): void {

@@ -21,47 +21,88 @@
         <th scope="col" *ngIf="isEdit">Ações</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="itensFolhaPagamento$ | async as itens">
       <tr *ngFor="let item of itensFolhaPagamento$ | async">
+        <ng-container *ngIf="!item.totalDescontos">
+          <td scope="row">
+            <i
+              [ngClass]="
+                'bi-' + (item.tipoItem === 'descontos' ? 'dash' : 'plus')
+              "
+            ></i>
+            {{ item.descricao }}
+          </td>
+          <td>{{ item.referencia }}</td>
+          <td class="descontos">
+            {{
+              item.tipoItem === "descontos"
+                ? "(" + (item.valor | number) + ")"
+                : ""
+            }}
+          </td>
+          <td class="proventos">
+            {{ item.tipoItem === "proventos" ? (item.valor | number) : "" }}
+          </td>
+          <td *ngIf="isEdit">
+            <button
+              type="button"
+              class="btn p-0 m-0"
+              aria-label="Editar"
+              (click)="openModal(template, 'Editar', item)"
+            >
+              <i class="icon bi bi-pencil-square"></i>
+            </button>
+            <button
+              type="button"
+              class="btn p-0 m-0"
+              aria-label="Deletar"
+              (click)="deleteItem(item.id)"
+            >
+              <i class="icon bi bi-trash3"></i>
+            </button>
+          </td>
+        </ng-container>
+      </tr>
+      <tr></tr>
+      <tr>
         <td scope="row">
-          <i
-            [ngClass]="
-              'bi-' + (item.tipoItem === 'descontos' ? 'dash' : 'plus')
-            "
-          ></i>
-          {{ item.descricao }}
+          <i class="bi-calculator"></i>
+          {{ "Total Bruto" | uppercase }}
         </td>
-        <td>{{ item.referencia }}</td>
+        <td></td>
+        <td class="descontos">
+          {{ "(" + (itens[itens.length - 1].totalDescontos | number) + ")" }}
+        </td>
+        <td class="proventos">
+          {{ itens[itens.length - 1].totalProventos | number }}
+        </td>
+        <td *ngIf="isEdit"></td>
+      </tr>
+
+      <tr>
+        <td scope="row">
+          <i class="bi-calculator"></i>
+          {{ "Total Líquido" | uppercase }}
+        </td>
+        <td></td>
         <td class="descontos">
           {{
-            item.tipoItem === "descontos"
-              ? "(" + (item.valor | number) + ")"
-              : ""
+            itens[itens.length - 1].totalGeral > 0
+              ? ""
+              : (itens[itens.length - 1].totalGeral | number)
           }}
         </td>
         <td class="proventos">
-          {{ item.tipoItem === "proventos" ? (item.valor | number) : "" }}
+          {{
+            itens[itens.length - 1].totalGeral < 0
+              ? ""
+              : (itens[itens.length - 1].totalGeral | number)
+          }}
         </td>
-        <td *ngIf="isEdit">
-          <button
-            type="button"
-            class="btn p-0 m-0"
-            aria-label="Editar"
-            (click)="openModal(template, 'Editar', item)"
-          >
-            <i class="icon bi bi-pencil-square"></i>
-          </button>
-          <button
-            type="button"
-            class="btn p-0 m-0"
-            aria-label="Deletar"
-            (click)="deleteItem(item.id)"
-          >
-            <i class="icon bi bi-trash3"></i>
-          </button>
-        </td>
+        <td *ngIf="isEdit"></td>
       </tr>
     </tbody>
+    <tfoot *ngIf="itensFolhaPagamento$ | async as itens"></tfoot>
   </table>
 </div>
 <ng-template #template>
