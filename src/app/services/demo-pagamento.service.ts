@@ -58,8 +58,6 @@ export class DemoPagamentoService {
 
         totais.totalGeral = totais.totalProventos - totais.totalDescontos;
 
-        // const itensComTotais = [...itens, totais];
-        // return itensComTotais;
         const folhaPagamento: FolhaPagamento = {
           itensFolhaPagamento: [...itens],
           totais: { ...totais },

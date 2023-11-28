@@ -41,13 +41,6 @@
       "referencia": "11,00",
       "tipoItem": "descontos",
       "valor": 621.03
-    },
-    {
-      "id": 7,
-      "descricao": "FGTS",
-      "referencia": "15,00",
-      "tipoItem": "descontos",
-      "valor": 1013
     }
   ]
 }
