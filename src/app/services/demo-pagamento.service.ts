@@ -13,4 +13,12 @@ export class DemoPagamentoService {
   getItensFolhaPagamento(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/itensFolhaPagamento`);
   }
+
+  addItem(item: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/itensFolhaPagamento`, item);
+  }
+
+  updateItem(item: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/itensFolhaPagamento/${item.id}`, item);
+  }
 }

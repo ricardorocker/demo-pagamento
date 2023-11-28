@@ -29,10 +29,19 @@ export class DemoPagamentoTableComponent implements OnInit {
     this.loadData();
   }
 
-  openModal( template: TemplateRef<any>, operation: 'Adicionar' | 'Editar', item?: any ) {
+  openModal(
+    template: TemplateRef<any>,
+    operation: 'Adicionar' | 'Editar',
+    item?: any
+  ) {
     this.modalOperation = operation;
 
     item ? (this.itemToEdit = item) : (this.itemToEdit = null);
     this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
+  }
+
+  closeAndRefresh(toRefresh: boolean) {
+    if (toRefresh) this.loadData();
+    this.modalRef.hide();
   }
 }

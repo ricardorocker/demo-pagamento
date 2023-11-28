@@ -6,7 +6,7 @@
     type="button"
     class="btn btn-close"
     aria-label="Close"
-    (click)="closeModal.emit()"
+    (click)="closeModal.emit(false)"
   ></button>
 </div>
 <div class="modal-body">
@@ -106,7 +106,7 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="closeModal.emit()">
+  <button type="button" class="btn btn-secondary" (click)="closeModal.emit(false)">
     Cancelar
   </button>
   <button type="button" class="btn btn-success" (click)="saveChanges()">
