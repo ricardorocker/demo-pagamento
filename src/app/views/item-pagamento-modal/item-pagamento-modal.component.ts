@@ -43,6 +43,8 @@ export class ItemPagamentoModalComponent implements OnInit {
   }
 
   saveChanges() {
+    if (this.itemForm.invalid) return;
+
     const formData = this.itemForm.value;
 
     if (this.modalOperation === 'Adicionar') {
