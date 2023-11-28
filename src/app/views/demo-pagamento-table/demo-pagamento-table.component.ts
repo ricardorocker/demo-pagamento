@@ -44,4 +44,10 @@ export class DemoPagamentoTableComponent implements OnInit {
     if (toRefresh) this.loadData();
     this.modalRef.hide();
   }
+
+  deleteItem(itemId: number) {
+    this.demoPagamentoService.deleteItem(itemId).subscribe(() => {
+      this.closeAndRefresh(true);
+    });
+  }
 }

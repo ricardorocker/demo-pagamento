@@ -21,4 +21,8 @@ export class DemoPagamentoService {
   updateItem(item: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/itensFolhaPagamento/${item.id}`, item);
   }
+
+  deleteItem(itemId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/itensFolhaPagamento/${itemId}`);
+  }
 }
