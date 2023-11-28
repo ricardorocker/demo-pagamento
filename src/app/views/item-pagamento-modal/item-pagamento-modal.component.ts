@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ItemFolhaPagamento } from 'src/app/models/item-folha-pagamento';
 import { DemoPagamentoService } from 'src/app/services/demo-pagamento.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { DemoPagamentoService } from 'src/app/services/demo-pagamento.service';
 export class ItemPagamentoModalComponent implements OnInit {
   @Input() modalRef!: BsModalRef;
   @Input() modalOperation: 'Adicionar' | 'Editar' = 'Adicionar';
-  @Input() itemToEdit?: any;
+  @Input() itemToEdit?: ItemFolhaPagamento;
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   itemForm: FormGroup;

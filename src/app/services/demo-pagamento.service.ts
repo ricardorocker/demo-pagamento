@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import { ItemFolhaPagamento } from '../models/item-folha-pagamento';
+import { FolhaPagamento } from '../models/folha-pagamento';
+import { Totais } from '../models/totais';
 
 @Injectable({
   providedIn: 'root',
@@ -10,35 +13,36 @@ export class DemoPagamentoService {
 
   constructor(private http: HttpClient) {}
 
-  getItensFolhaPagamento(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/itensFolhaPagamento`);
+  getItensFolhaPagamento(): Observable<ItemFolhaPagamento[]> {
+    return this.http.get<ItemFolhaPagamento[]>(
+      `${this.apiUrl}/itensFolhaPagamento`
+    );
   }
 
-  addItem(item: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/itensFolhaPagamento`, item);
+  addItem(item: ItemFolhaPagamento): Observable<ItemFolhaPagamento> {
+    return this.http.post<ItemFolhaPagamento>(
+      `${this.apiUrl}/itensFolhaPagamento`,
+      item
+    );
   }
 
-  updateItem(item: any): Observable<any> {
-    return this.http.put<any>(
+  updateItem(item: ItemFolhaPagamento): Observable<ItemFolhaPagamento> {
+    return this.http.put<ItemFolhaPagamento>(
       `${this.apiUrl}/itensFolhaPagamento/${item.id}`,
       item
     );
   }
 
-  deleteItem(itemId: number): Observable<any> {
-    return this.http.delete<any>(
+  deleteItem(itemId: number): Observable<ItemFolhaPagamento> {
+    return this.http.delete<ItemFolhaPagamento>(
       `${this.apiUrl}/itensFolhaPagamento/${itemId}`
     );
   }
 
-  getAll(): Observable<any[]> {
+  getAll(): Observable<FolhaPagamento> {
     return this.getItensFolhaPagamento().pipe(
       map((itens) => {
-        const totais: {
-          totalDescontos: number;
-          totalProventos: number;
-          totalGeral: number;
-        } = {
+        const totais: Totais = {
           totalDescontos: 0,
           totalProventos: 0,
           totalGeral: 0,
@@ -54,8 +58,14 @@ export class DemoPagamentoService {
 
         totais.totalGeral = totais.totalProventos - totais.totalDescontos;
 
-        const itensComTotais = [...itens, totais];
-        return itensComTotais;
+        // const itensComTotais = [...itens, totais];
+        // return itensComTotais;
+        const folhaPagamento: FolhaPagamento = {
+          itensFolhaPagamento: [...itens],
+          totais: { ...totais },
+        };
+
+        return folhaPagamento;
       })
     );
   }

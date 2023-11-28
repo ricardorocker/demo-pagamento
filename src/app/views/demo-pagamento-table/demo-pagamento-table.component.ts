@@ -1,6 +1,8 @@
 import { Component, Input, TemplateRef, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { FolhaPagamento } from 'src/app/models/folha-pagamento';
+import { ItemFolhaPagamento } from 'src/app/models/item-folha-pagamento';
 import { DemoPagamentoService } from 'src/app/services/demo-pagamento.service';
 
 @Component({
@@ -12,8 +14,12 @@ export class DemoPagamentoTableComponent implements OnInit {
   @Input() isEdit: boolean = false;
   modalOperation: 'Adicionar' | 'Editar' = 'Adicionar';
   modalRef!: BsModalRef;
-  itensFolhaPagamento$: Observable<any[]> = new BehaviorSubject<any[]>([]);
-  itemToEdit?: any;
+  itensFolhaPagamento$: Observable<FolhaPagamento> =
+    new BehaviorSubject<FolhaPagamento>({
+      itensFolhaPagamento: [],
+      totais: { totalDescontos: 0, totalProventos: 0, totalGeral: 0 },
+    });
+  itemToEdit?: ItemFolhaPagamento;
 
   constructor(
     private modalService: BsModalService,
@@ -31,11 +37,11 @@ export class DemoPagamentoTableComponent implements OnInit {
   openModal(
     template: TemplateRef<any>,
     operation: 'Adicionar' | 'Editar',
-    item?: any
+    item?: ItemFolhaPagamento
   ) {
     this.modalOperation = operation;
 
-    item ? (this.itemToEdit = item) : (this.itemToEdit = null);
+    item ? (this.itemToEdit = item) : null;
     this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
   }
 
